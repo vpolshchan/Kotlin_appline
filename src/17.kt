@@ -1,27 +1,12 @@
 fun main(args: Array<String>) {
-    //Задание 17
-    var Aircraft:Aircraft = Aircraft()
-    Aircraft.number = 1
-    Aircraft.range = 14140
-    Aircraft.capacity = 101000
+    //Задание 17+18
+    var Aircraft: Aircraft = Aircraft(1,14140,10100)
     println(Aircraft.info())
 }
-class Aircraft{
-    var number: Int = 0
-        set(value) {
-            if (value > 0)
-                field = value
-        }
-    var range: Int = 0
-        set(value) {
-            if (value > 0)
-                field = value
-        }
-    var capacity: Int = 0
-        set(value) {
-            if (value > 0)
-                field = value
-        }
+class Aircraft(_number: Int, _range: Int, _capacity: Int){
+    var number: Int = _number
+    var range: Int = _range
+    var capacity: Int = _capacity
     val fuel: Int
         get() = (capacity/range)*100
     fun info(): String{
