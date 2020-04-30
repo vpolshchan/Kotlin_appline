@@ -1,10 +1,9 @@
 fun main(args: Array<String>) {
-    //Задание 17+18+19
+    //Задание 17+18+19+20
     var Aircraft: Aircraft = Aircraft(1,14140,10100)
-    var Boing: Boeing747 = Boeing747(2,14815,242470)
+    var Boing: Boeing747 = Boeing747(2,14815,242470,581)
     println(Aircraft.info())
     println(Boing.info())
-    Boing.pascapacity = 581
     println("вместимость пассажиров в Boeing747 ${Boing.pascapacity}")
 }
 open class Aircraft(_number: Int, _range: Int, _capacity: Int){
@@ -23,7 +22,10 @@ open class Aircraft(_number: Int, _range: Int, _capacity: Int){
         return i
     }
 }
-class Boeing747(_number: Int, _range: Int, _capacity: Int): Aircraft(_number, _range, _capacity) {
-    var pascapacity: Int = 0
+interface Passenger {
+    var pascapacity: Int
+}
+class Boeing747(_number: Int, _range: Int, _capacity: Int, override var pascapacity: Int): Aircraft(_number, _range, _capacity), Passenger{
+
 
 }
