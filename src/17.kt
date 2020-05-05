@@ -1,12 +1,12 @@
 fun main(args: Array<String>) {
-    //Задание 17+18+19+20
-    var Aircraft: Aircraft = Aircraft(1,14140,10100)
+    //Задание 17+18+19+20+21
+    //var Aircraft: Aircraft = Aircraft(1,14140,10100)
     var Boing: Boeing747 = Boeing747(2,14815,242470,581)
-    println(Aircraft.info())
+    //println(Aircraft.info())
     println(Boing.info())
     println("вместимость пассажиров в Boeing747 ${Boing.pascapacity}")
 }
-open class Aircraft(_number: Int, _range: Int, _capacity: Int){
+abstract class Aircraft(_number: Int, _range: Int, _capacity: Int){
     var number: Int = _number
     var range: Int = _range
     var capacity: Int = _capacity
